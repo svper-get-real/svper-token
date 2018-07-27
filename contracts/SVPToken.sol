@@ -160,8 +160,8 @@ contract SVPToken is ERC20, Pausable {
 
 
   // Token distribution, must sumup to 1000
-  uint256 public constant SHARE_PURCHASERS = 400;
-  uint256 public constant SHARE_FOUNDATION = 450;
+  uint256 public constant SHARE_PURCHASERS = 700;
+  uint256 public constant SHARE_FOUNDATION = 150;
   uint256 public constant SHARE_TEAM = 100;
   uint256 public constant SHARE_BOUNTY = 50;
 

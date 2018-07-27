@@ -2,7 +2,7 @@
 
 Svper will initially issue 1 billion SVP tokens.
 
-40% SVP tokens will be allocated to the token sale purchasers, 45% to the foundation, 10% to the team and 5% to bounty programs. (check finishMinting function)
+70% SVP tokens will be allocated to the token sale purchasers, 15% to the foundation, 10% to the team and 5% to bounty programs. (check finishMinting function)
 
 The final amount will depend on the bonuses that would be applied to the token sale. 
 

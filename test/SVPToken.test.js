@@ -54,7 +54,7 @@ contract('SVPToken', function ([_, owner, recipient, anotherAccount]) {
 
   describe('finishMinting', function () {
     const PURCHASER_AMOUNT = new BigNumber(10000000 * 10 ** TOKEN_DECIMAL);
-    const ONE_PER_THOUSAND = PURCHASER_AMOUNT.dividedToIntegerBy(400);
+    const ONE_PER_THOUSAND = PURCHASER_AMOUNT.dividedToIntegerBy(700);
     it('should revert when finishMinting when wallets are not set', async function () {
       await this.token.mint(owner, PURCHASER_AMOUNT, { from: owner });
       await assertRevert(this.token.finishMinting({ from: owner }));
@@ -67,12 +67,12 @@ contract('SVPToken', function ([_, owner, recipient, anotherAccount]) {
       assert(bountyBalance.eq(ONE_PER_THOUSAND.mul(50)));
 
       let foundationBalance = await this.token.balanceOf('0xBa893462c1b714bFD801e918a4541e056f9bd924');
-      assert(foundationBalance.eq(ONE_PER_THOUSAND.mul(450)));
+      assert(foundationBalance.eq(ONE_PER_THOUSAND.mul(150)));
 
       let teamBalance = await this.token.balanceOf('0x2418C46F2FA422fE8Cd0BF56Df5e27CbDeBB2590');
       assert(teamBalance.eq(ONE_PER_THOUSAND.mul(100)));
 
-      assert(teamBalance.plus(foundationBalance).plus(bountyBalance).plus(ONE_PER_THOUSAND.mul(400)).eq(ONE_PER_THOUSAND.mul(1000)));
+      assert(teamBalance.plus(foundationBalance).plus(bountyBalance).plus(ONE_PER_THOUSAND.mul(700)).eq(ONE_PER_THOUSAND.mul(1000)));
     });
     it('should revert when minting after finishMinting ', async function () {
       await this.token.mint(owner, PURCHASER_AMOUNT, { from: owner });
